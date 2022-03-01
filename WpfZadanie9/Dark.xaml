@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="bg" Color="Black"/>
+    <SolidColorBrush x:Key="cFront" Color="White"/>
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+        <Setter Property="Foreground" Value="{StaticResource cFront}"/>
+    </Style>
+    <Style TargetType="ToolBarTray">
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+    </Style>
+    <Style TargetType="Menu">
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+        <Setter Property="Foreground" Value="{StaticResource cFront}"/>
+    </Style>
+    <Style TargetType="MenuItem">
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+        <Setter Property="Foreground" Value="{StaticResource cFront}"/>
+    </Style>
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+        <Setter Property="Foreground" Value="{StaticResource cFront}"/>
+    </Style>
+    <Style TargetType="ComboBox" >
+        <Setter Property="Background" Value="{StaticResource bg}"/>
+        <Setter Property="Foreground" Value="{StaticResource cFront}"/>
+    </Style>
+</ResourceDictionary>

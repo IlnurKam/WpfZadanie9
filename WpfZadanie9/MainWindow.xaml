@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfZadanie9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfZadanie9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Style="{DynamicResource WindowStyle}">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="MenuItem_Click"/>
+        <CommandBinding Command="Save" Executed="MenuItem_Click_1"/>
+        <CommandBinding Command="Close" Executed="MenuItem_Click_2"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" VerticalContentAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="_Открыть" Command="ApplicationCommands.Open"/>
+                <MenuItem Header="_Сохранить" Command="ApplicationCommands.Save"/>
+                <Separator/>
+                <MenuItem Header="_Закрыть" Command="ApplicationCommands.Close" />
+            </MenuItem>
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged" />
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" />
+            <Separator />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="Data/Boldtext.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                <Image Source="Data/italictext.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                <Image Source="Data/underline.png" Width="18" Height="18" />
+            </ToggleButton>
+            <Separator />
+            <StackPanel VerticalAlignment="Center">
+                <RadioButton Content="Чёрный" IsChecked="True" Foreground="Black" Checked="RadioButton_Checked" />
+                <RadioButton Content="Красный" Foreground="Red" Checked="RadioButton_Checked_1"/>
+            </StackPanel>
+            <Separator />
+            <ComboBox Name="themes" Width="100" SelectedIndex="0" Margin="5" SelectionChanged="themes_SelectionChanged">
+                <TextBlock Text="Светлая"/>
+                <TextBlock Text="Тёмная"/>
+            </ComboBox>
+        </ToolBar>
+        <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" />
+    </DockPanel>
+</Window>
